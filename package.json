@@ -6,6 +6,7 @@
   "author": "Azat S. <to@azat.io>",
   "license": "MIT",
   "scripts": {
+    "figma": "node --env-file=.env --loader tsm \"./tools/figma.ts\"",
     "release": "pnpm release:check && pnpm release:npm",
     "release:check": "pnpm test",
     "release:npm": "clean-publish",
@@ -38,7 +39,10 @@
     "figma-api": "^1.11.0",
     "prettier": "^3.0.3",
     "simple-git-hooks": "^2.9.0",
+    "svgo": "^3.0.2",
+    "tsm": "^2.3.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.11"
+    "vite": "^4.4.11",
+    "vitest": "^0.34.6"
   }
 }

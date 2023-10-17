@@ -8,6 +8,9 @@ dist/
 .vscode/
 .vim/
 
+# Environment
+.env
+
 # Temp files
 temp-*/
 

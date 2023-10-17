@@ -9,4 +9,6 @@
   width="170"
 />
 
+![Static Badge](https://img.shields.io/badge/status-work_in_progress-success)
+
 There will be a new icon theme here.

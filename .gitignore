@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+
+# Build
+dist/
+
+# Editor
+.vscode/
+.vim/
+
+# Temp files
+temp-*/
+
+# Test
+coverage/
+
+# Misc
+.DS_Store

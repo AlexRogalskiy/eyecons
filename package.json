@@ -1,0 +1,40 @@
+{
+  "name": "eyecons",
+  "description": "Icon library",
+  "version": "0.1.0",
+  "repository": "azat-io/eyecons",
+  "author": "Azat S. <to@azat.io>",
+  "license": "MIT",
+  "scripts": {
+    "test:format": "prettier --check \"**/*.{js,ts,json,md,yml}\"",
+    "test:js": "eslint \"**/*.{js,ts}\"",
+    "test:types": "tsc --noEmit --pretty",
+    "test": "pnpm run /^test:/"
+  },
+  "devDependencies": {
+    "@azat-io/eslint-config-typescript": "^1.6.0",
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
+    "@types/node": "^20.8.6",
+    "@types/vscode": "^1.83.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.51.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-node-import": "^1.0.4",
+    "eslint-plugin-perfectionist": "^2.2.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prefer-let": "^3.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-sonarjs": "^0.21.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "eslint-plugin-vitest": "^0.3.2",
+    "figma-api": "^1.11.0",
+    "prettier": "^3.0.3",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11"
+  }
+}

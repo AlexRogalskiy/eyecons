@@ -1,0 +1,21 @@
+::selection {
+  color: oklch(28.91% 0 0);
+  background: oklch(82.44% 0.163 81.73 / 99%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Stem, Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-inline-size: 320px;
+  margin: 0;
+  font: var(--font-m);
+  letter-spacing: 0.5px;
+  background: var(--color-background-primary);
+}

@@ -1,4 +1,5 @@
 {
+  "plugins": ["prettier-plugin-astro"],
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "endOfLine": "lf",
@@ -8,5 +9,13 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
-  "useTabs": false
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }

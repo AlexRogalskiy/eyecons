@@ -12,6 +12,7 @@
     "strict": true,
     "noEmit": true
   },
+  "extends": "astro/tsconfigs/strict",
   "exclude": ["node_modules"],
   "include": ["**/*.ts"]
 }

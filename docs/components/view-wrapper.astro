@@ -1,0 +1,64 @@
+---
+
+---
+
+<div class="view-wrapper">
+  <header class="view-header">
+    <div class:list={['dot', 'dot-red']}></div>
+    <div class:list={['dot', 'dot-amber']}></div>
+    <div class:list={['dot', 'dot-green']}></div>
+  </header>
+  <main class="view-main">
+    <slot />
+  </main>
+</div>
+
+<style>
+  .view-wrapper {
+    block-size: 800px;
+    inline-size: calc(100% - 32px);
+    max-inline-size: 1600px;
+    margin-block-start: -360px;
+    margin-inline: auto;
+    overflow: hidden;
+    border: 1px solid var(--color-background-secondary);
+    border-radius: 8px;
+    box-shadow: oklch(0% 0 0 / 30%) 0 1px 3px;
+  }
+
+  .view-header {
+    display: flex;
+    gap: 4px;
+    padding: 10px;
+    background: var(--color-background-secondary);
+    border-block-end: 1px solid var(--color-background-tertiary);
+  }
+
+  .dot {
+    display: inline-block;
+    inline-size: 10px;
+    border-radius: 50%;
+    block-size: 10px;
+  }
+
+  .dot-red {
+    background: oklch(69.5% 0.19 26.65);
+    border: 1px solid oklch(64.5% 0.19 26.65);
+  }
+
+  .dot-amber {
+    background: oklch(80% 0.15 79);
+    border: 1px solid oklch(75% 0.15 79);
+  }
+
+  .dot-green {
+    background: oklch(75% 0.22 144.65);
+    border: 1px solid oklch(70% 0.22 144.65);
+  }
+
+  .view-main {
+    padding: 10px;
+    background: var(--color-background-primary);
+    block-size: 100%;
+  }
+</style>

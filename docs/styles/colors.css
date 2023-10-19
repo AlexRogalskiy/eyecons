@@ -1,4 +1,6 @@
 :root {
-  --color-background-primary: oklch(28.91% 0 0);
+  --color-background-primary: oklch(29% 0 0);
+  --color-background-secondary: oklch(26% 0 0);
+  --color-background-tertiary: oklch(24% 0 0);
   --color-background-brand: oklch(82.43% 0.163 81.79);
 }

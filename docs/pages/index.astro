@@ -1,9 +1,13 @@
 ---
-import Layout from '../layouts/layout.astro'
+import ViewWrapper from '../components/view-wrapper.astro'
 import Header from '../components/header.astro'
+import Layout from '../layouts/layout.astro'
+import View from '../components/view.svelte'
 ---
 
 <Layout title="Eyecons | Advanced Icon Theme" description="">
   <Header />
-  <main></main>
+  <ViewWrapper>
+    <View client:load />
+  </ViewWrapper>
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import '../styles/base.css'
+import '../styles/fonts.css'
 import '../styles/colors.css'
 
 interface Props {
@@ -19,6 +20,13 @@ const { title, description } = Astro.props
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      href="/fonts/martian-mono.woff2"
+      type="font/woff"
+      rel="preload"
+      crossorigin
+      as="font"
+    />
     <title>{title}</title>
   </head>
   <body>

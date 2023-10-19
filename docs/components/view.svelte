@@ -1,8 +1,20 @@
-<p class="hello">Hello</p>
+<script lang="ts">
+  import Code from './code.svelte'
+</script>
+
+<div class="view">
+  <div class="icons">Hello</div>
+  <Code theme="gruvbox-dark" />
+</div>
 
 <style>
-  .hello {
-    color: oklch(100% 0 0);
-    margin-block: 0;
+  .view {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    block-size: 100%;
+  }
+
+  .icons {
+    padding: 10px;
   }
 </style>

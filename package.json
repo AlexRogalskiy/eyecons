@@ -8,7 +8,8 @@
   "scripts": {
     "docs:dev": "astro dev",
     "docs:build": "astro build",
-    "figma": "node --env-file=.env --loader tsm \"./tools/figma.ts\"",
+    "figma": "pnpm figma:clean && node --env-file=.env --loader tsm \"./tools/figma.ts\"",
+    "figma:clean": "node -e \"fs.rmSync('./icons', { recursive: true, force: true })\"",
     "release": "pnpm release:check && pnpm release:npm",
     "release:check": "pnpm test",
     "release:npm": "clean-publish",

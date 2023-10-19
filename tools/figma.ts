@@ -12,9 +12,19 @@ interface FigmaPage {
 
 let figmaPages: FigmaPage[] = [
   {
-    fileKey: '4XZoGZ9m6n1UxqISupFBJH',
+    fileKey: '4z2OIRRbvD1GwIdFQLswY4',
+    type: 'base',
+    ids: '1:2',
+  },
+  {
+    fileKey: '4z2OIRRbvD1GwIdFQLswY4',
     type: 'files',
-    ids: '0:1',
+    ids: '1:3',
+  },
+  {
+    fileKey: '4z2OIRRbvD1GwIdFQLswY4',
+    type: 'folders',
+    ids: '1:4',
   },
 ]
 

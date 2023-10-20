@@ -1,8 +1,19 @@
+import { viteStaticCopy as staticCopy } from 'vite-plugin-static-copy'
 import { defineConfig } from 'astro/config'
 import svelte from '@astrojs/svelte'
 
 export default defineConfig({
   vite: {
+    plugins: [
+      staticCopy({
+        targets: [
+          {
+            src: 'themes',
+            dest: '',
+          },
+        ],
+      }),
+    ],
     css: {
       transformer: 'lightningcss',
     },

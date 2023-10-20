@@ -1,8 +1,9 @@
-import { fileURLToPath } from 'node:url'
 import * as Figma from 'figma-api'
 import fs from 'node:fs/promises'
 import { optimize } from 'svgo'
 import path from 'node:path'
+
+import { getDirname } from '../utils/get-dirname'
 
 interface FigmaPage {
   fileKey: string
@@ -32,8 +33,7 @@ let api = new Figma.Api({
   personalAccessToken: process.env.FIGMA_ACCESS_TOKEN!,
 })
 
-let __filename = fileURLToPath(import.meta.url)
-let __dirname = path.dirname(__filename)
+let dirname = getDirname()
 
 export let getIcons = async ({ fileKey, type, ids }: FigmaPage) => {
   let { nodes } = await api.getFileNodes(fileKey, [ids])
@@ -51,7 +51,7 @@ export let getIcons = async ({ fileKey, type, ids }: FigmaPage) => {
     scale: 1,
   })
 
-  let iconPath = path.join(__dirname, '..', 'icons', type)
+  let iconPath = path.join(dirname, '..', 'icons', type)
   await fs.mkdir(iconPath, { recursive: true })
 
   await Promise.all(

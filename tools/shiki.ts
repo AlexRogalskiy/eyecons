@@ -1,9 +1,10 @@
 import stripJsonComments from 'strip-json-comments'
-import { fileURLToPath } from 'node:url'
 import decompress from 'decompress'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import os from 'node:os'
+
+import { getDirname } from '../utils/get-dirname'
 
 interface Theme {
   themes: {
@@ -40,8 +41,7 @@ let themes: {
   },
 }
 
-let __filename = fileURLToPath(import.meta.url)
-let __dirname = path.dirname(__filename)
+let dirname = getDirname()
 
 let getTheme = async ([name, theme]: [string, Theme]) => {
   let { themes: themesData, publisher, extension } = theme
@@ -71,7 +71,7 @@ let getTheme = async ([name, theme]: [string, Theme]) => {
       if (extensionTheme) {
         let themePath = path.join(tmpDir, 'extension', extensionTheme.path)
         let themeBuffer = await fs.readFile(themePath)
-        let themeDir = path.join(__dirname, '..', 'themes')
+        let themeDir = path.join(dirname, '..', 'themes')
         await fs.mkdir(themeDir, { recursive: true })
         await fs.writeFile(
           path.join(themeDir, `${id}.json`),

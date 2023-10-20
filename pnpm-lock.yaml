@@ -128,6 +128,9 @@ devDependencies:
   svelte:
     specifier: ^4.2.2
     version: 4.2.2
+  svelte-select:
+    specifier: ^5.7.0
+    version: 5.7.0
   svgo:
     specifier: ^3.0.2
     version: 3.0.2
@@ -1204,6 +1207,23 @@ packages:
   /@eslint/js@8.51.0:
     resolution: {integrity: sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@floating-ui/core@1.5.0:
+    resolution: {integrity: sha512-kK1h4m36DQ0UHGj5Ah4db7R0rHemTqqO0QLvUqi1/mUUp3LuAWbWxdxSIf/XsnH9VS6rRVPLJCncjRzUvyCLXg==}
+    dependencies:
+      '@floating-ui/utils': 0.1.6
+    dev: true
+
+  /@floating-ui/dom@1.5.3:
+    resolution: {integrity: sha512-ClAbQnEqJAKCJOEbbLo5IUlZHkNszqhuxS4fHAVxRPXPya6Ysf2G8KypnYcOTpx6I8xcgF9bbHb6g/2KpbV8qA==}
+    dependencies:
+      '@floating-ui/core': 1.5.0
+      '@floating-ui/utils': 0.1.6
+    dev: true
+
+  /@floating-ui/utils@0.1.6:
+    resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.11:
@@ -7323,6 +7343,13 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /svelte-floating-ui@1.2.8:
+    resolution: {integrity: sha512-8Ifi5CD2Ui7FX7NjJRmutFtXjrB8T/FMNoS2H8P81t5LHK4I9G4NIs007rLWG/nRl7y+zJUXa3tWuTjYXw/O5A==}
+    dependencies:
+      '@floating-ui/core': 1.5.0
+      '@floating-ui/dom': 1.5.3
+    dev: true
+
   /svelte-hmr@0.15.3(svelte@4.2.2):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -7330,6 +7357,13 @@ packages:
       svelte: ^3.19.0 || ^4.0.0
     dependencies:
       svelte: 4.2.2
+    dev: true
+
+  /svelte-select@5.7.0:
+    resolution: {integrity: sha512-oClK1exjcWDj2817+0djGhK04t5CSZbuP0oh7gz+3dEcn/G+QqRsfI2/dvIyOSHILqNzlj+Ztp2z1pMtE7Wf8Q==}
+    dependencies:
+      '@floating-ui/dom': 1.5.3
+      svelte-floating-ui: 1.2.8
     dev: true
 
   /svelte2tsx@0.6.23(svelte@4.2.2)(typescript@5.2.2):

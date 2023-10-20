@@ -58,6 +58,8 @@ let getTheme = async ([name, theme]: [string, Theme]) => {
     path.join(tmpDir, 'extension', 'package.json'),
   )
   let packageJson = JSON.parse(packageJsonBuffer.toString())
+  let themeDir = path.join(dirname, '..', 'themes')
+  let dataDir = path.join(dirname, '..', 'data')
   let extensionThemes: {
     uiTheme: string
     label: string
@@ -71,7 +73,6 @@ let getTheme = async ([name, theme]: [string, Theme]) => {
       if (extensionTheme) {
         let themePath = path.join(tmpDir, 'extension', extensionTheme.path)
         let themeBuffer = await fs.readFile(themePath)
-        let themeDir = path.join(dirname, '..', 'themes')
         await fs.mkdir(themeDir, { recursive: true })
         await fs.writeFile(
           path.join(themeDir, `${id}.json`),
@@ -79,6 +80,21 @@ let getTheme = async ([name, theme]: [string, Theme]) => {
         )
       }
     }),
+  )
+  await fs.writeFile(
+    path.join(dataDir, 'themes.ts'),
+    `/* eslint-disable */\nexport let themes = ${JSON.stringify(
+      Object.values(themes).reduce(
+        (
+          accumulator: {
+            name: string
+            id: string
+          }[],
+          currentTheme,
+        ) => [...accumulator, ...currentTheme.themes],
+        [],
+      ),
+    )} as const`,
   )
   await fs.rm(tmpDir, { recursive: true })
 }

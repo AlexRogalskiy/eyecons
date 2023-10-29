@@ -9,28 +9,22 @@
     let set = (key: string, value: string) => {
       root.style.setProperty(key, value)
     }
-    set('--view-background', colors['editor.background'])
-    set('--view-color', colors['editor.foreground'])
+    set('--view-background-primary', colors['editor.background'])
+    set('--view-color-primary', colors['editor.foreground'])
+    set('--view-border-active', colors['editor.foreground'])
     set(
       '--view-border',
       !colors['tab.border'].startsWith(colors['editor.background'])
         ? colors['tab.border']
         : colors['editorGroup.border'],
     )
+
     set(
-      '--view-tab-active-background',
+      '--view-background-secondary',
       !colors['tab.activeBackground'].startsWith(colors['editor.background'])
         ? colors['tab.activeBackground']
         : colors['tab.inactiveBackground'],
     )
-    set(
-      '--view-tab-background',
-      !colors['tab.activeBackground'].startsWith(colors['editor.background'])
-        ? colors['tab.inactiveBackground']
-        : colors['tab.activeBackground'],
-    )
-    set('--view-tab-active-color', colors['tab.activeForeground'])
-    set('--view-tab-color', colors['tab.inactiveForeground'])
   }
 
   let getHighlightedCode = async (colorThemeName: string): Promise<string> => {
@@ -70,7 +64,7 @@
 
 <style>
   .code {
-    background: var(--view-background);
+    background: var(--view-background-primary);
     padding: 10px;
   }
 </style>

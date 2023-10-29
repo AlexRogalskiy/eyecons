@@ -5,6 +5,15 @@
   "repository": "azat-io/eyecons",
   "author": "Azat S. <to@azat.io>",
   "license": "MIT",
+  "galleryBanner": {
+    "theme": "light",
+    "color": "#fab922"
+  },
+  "icon": "assets/logo.png",
+  "categories": [
+    "Themes",
+    "Other"
+  ],
   "scripts": {
     "docs:dev": "astro dev",
     "docs:build": "astro build",
